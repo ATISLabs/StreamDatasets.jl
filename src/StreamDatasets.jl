@@ -1,5 +1,8 @@
 module StreamDatasets
 
-# Write your package code here.
+using ARFFFiles
+using DataFrames
+using EasyStream
 
+include("datasets.jl")
 end
