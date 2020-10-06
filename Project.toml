@@ -3,11 +3,16 @@ uuid = "8896114b-3eb6-490c-a8f4-8ec3057017c7"
 authors = ["ATISLabs"]
 version = "0.1.0"
 
-[extras]
-Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+[deps]
+ARFFFiles = "da404889-ca92-49ff-9e8b-0aa6b4d38dc8"
+BinDeps = "9e28174c-4ba2-5203-b857-d8d62c4213ee"
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
 
 [compat]
 julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
 
 [targets]
 test = ["Test"]

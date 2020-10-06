@@ -1,10 +1,16 @@
+using BinDeps
+
 const defdir = joinpath(dirname(@__FILE__), "..", "datasets")
 
 function get_usp_data(dir)
-       mkpath(joinpath(defdir, "real"))
-       path = download("http://sites.labic.icmc.usp.br/vsouza/repository/usp-stream-data.zip")
-    mv(path, joinpath(defdir, "real/usp-stream-data.zip"))
-    run(`7z x datasets/real/usp-stream-data.zip -odatasets/real/`)
+    mkpath(dir)
+    
+    @info """Downloading usp-stream-data.zip ...
+    You will need the password for this file and it can be found at https://sites.google.com/view/uspdsrepository
+    """
+
+    path = download("http://sites.labic.icmc.usp.br/vsouza/repository/usp-stream-data.zip")
+    run(unpack_cmd(path, dir, ".zip", ""))
 end
 
 function dataset_airlines(batch::Int)::EasyStream.BatchStream
